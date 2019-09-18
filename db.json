@@ -1,0 +1,33 @@
+{
+  "admin": [
+    {
+      "id": 12,
+      "email": "tolu29@email.com",
+      "password": "wisdom123"
+    }
+   
+  ],
+  "employees": [
+    {
+      "email": "ricardokaka@gmail.com",
+      "firstName": "tolu",
+      "lastName": "Kaka",
+      "address": "22 Rio, Brazil.",
+      "mobile": "0906543564",
+      "status": "UNPAID",
+      "salary": "999000",
+      "maritalStatus": "Single",
+      "id": 4
+    },
+    {
+      "email": "teejohn247@gmail.com",
+      "firstName": "Tolu",
+      "lastName": "Johnson",
+      "address": "13, Yemi matanmi street,Dalemo, Alakuko,Lagos",
+      "mobile": "08161582774",
+      "status": "UNPAID",
+      "maritalStatus": "single",
+      "id": 11
+    }
+  ]
+}
