@@ -38,6 +38,17 @@
        height: 80%;
        box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
     }
+    .login-error{
+	background: #e15960;
+	color: #fefefe;
+	font-size: 12px;
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
+	border-radius: 5px;
+	padding: 0.5em;
+	display: none;
+}
     
     </style>
 <script type="text/javascript" src= "./js/jquery.js"></script>
@@ -48,6 +59,7 @@
 <body>
   <div class="login" id="login">
   <form class="all">
+      <div class="login-error">please verify your username and password</div>
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
       <input type="email" class="email form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">

@@ -16,12 +16,54 @@ const payAll = (id) => {
             .then(res => res.json())
             .then(data => {
     console.log(data)
+    window.location.href = "./viewAll.html"
                 
          
             })
             .catch(error => console.log(error.message));
         event.preventDefault();
     };
+  
+    function payWithPaystack() {
+  
+  const storage = JSON.parse(localStorage.getItem('specific'));
+  console.log(storage.salary);
+      var handler = PaystackPop.setup({ 
+          key: 'pk_test_60011c68e2f4b339134d22a75e3387ae93ac57fe', 
+          email: 'teejohn247@gmail.com', 
+          amount: storage.salary, 
+          metadata: {
+              custom_fields: [
+                  {
+                      display_name: "Mobile Number",
+                      variable_name: "mobile_number",
+                      value: "+2348012345678" //customer's mobile number
+                  }
+              ]
+          },
+          callback: function (response) {
+              //after the transaction have been completed
+              //make post call  to the server with to verify payment 
+              //using transaction reference as post data
+              $.post("verify.php", {reference:response.reference}, function(status){
+                  if(status == "success"){
+                      //successful transaction
+                      alert('Transaction was successful');
+                  }
+  
+                  else
+                      //transaction failed
+                      alert(response);
+              });
+              payAll(storage.id);
+          },
+          onClose: function () {
+              //when the user close the payment modal
+              alert('Transaction cancelled');
+          }
+      });
+      handler.openIframe(); //open the paystack's payment modal
+  }
     
   
   const specific = (id) => {
@@ -61,33 +103,37 @@ const payAll = (id) => {
         const id = storage.id;
         console.log(storage); 
         const jumbo = document.querySelector('.jumbotron');
-        const h = document.createElement('h1');
-        const p1 = document.createElement('h3');
-        const p2 = document.createElement('h3');
-        const p3 = document.createElement('h3');
-        const p4 = document.createElement('h3');
-        const p5 = document.createElement('h3');
-        const p6 = document.createElement('h3');
+        const h = document.createElement('h3');
+        const p1 = document.createElement('h4');
+        const p2 = document.createElement('h4');
+        const p3 = document.createElement('h4');
+        const p4 = document.createElement('h4');
+        const p5 = document.createElement('h4');
+        const p6 = document.createElement('h4');
+        const img = document.createElement('img');
+  
+  
   
         const btnn = document.createElement('a');
         const btnn2 = document.createElement('a');
   
   
   
-        jumbo.append(h,p1,p2,p3,p4,p5,p6,btnn,btnn2);
-        h.textContent =`${storage.firstName} ${storage.lastName}`;
-        p1.textContent =`${storage.maritalStatus}`;
-        p2.textContent =`${storage.mobile}`;
-        p3.textContent =`${storage.status}`;
-        p4.textContent =`${storage.salary}`;
-        p5.textContent =`${storage.address}`;
-        p6.textContent =`${storage.email}`;
+        jumbo.append(h,p1,p2,p3,p4,p5,p6,btnn,btnn2,img);
+        h.innerHTML =`<span class = "edit">Name:</span> ${storage.firstName} ${storage.lastName}`;
+        p1.textContent =`Marital Status: ${storage.maritalStatus}`;
+        p2.textContent =`Mobile Number:  ${storage.mobile}`;
+        p3.textContent =`Payment Status: ${storage.status}`;
+        p4.textContent =`Salary: ${storage.salary}`;
+        p5.textContent =`Address: ${storage.address}`;
+        p6.textContent =`Email: ${storage.email}`;
+        style="background-color:#100E17"
   
   
         btnn.textContent =`Learn more`;
-        btnn.innerHTML = `<a href="./editForm.html"><button class="btn btn-primary btn-lg">Edit</button></a>`
-        btnn.setAttribute('class', 'btn btn-primary btn-lg');
-        btnn2.innerHTML = `<button class="btn btn-primary btn-lg" onclick = "payAll(${id})">pay</button>`
-        btnn2.setAttribute('class', 'btn btn-primary btn-lg');
+        jumbo.setAttribute('style', "background-color:#100E17");
+       
+        btnn.innerHTML = `<a href="./editForm.html"><button class="btnn">Edit</button></a>`
+        btnn2.innerHTML = `<button class="btnn" onclick = "payWithPaystack()">pay</button>`
       };
       populate();

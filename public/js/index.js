@@ -1,4 +1,6 @@
+
 $(function() {
+  const loginError = document.querySelector(".login-error");
 
   $('#login').submit((e) => {
     e.preventDefault();
@@ -15,6 +17,10 @@ $.ajax(
          if(admin.email === email && admin.password === password){
            window.location.href = "../viewAll.html"
          }else{
+          loginError.style.display = " block";
+          setTimeout(() => {
+            loginError.style.display = "none";
+          }, 3000);
            console.log('error')
          }
        })
@@ -25,4 +31,6 @@ $.ajax(
   }
 );
 })
+
+
 })
