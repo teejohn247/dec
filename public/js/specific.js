@@ -23,6 +23,47 @@ const payAll = (id) => {
             .catch(error => console.log(error.message));
         event.preventDefault();
     };
+  
+    function payWithPaystack() {
+  
+  const storage = JSON.parse(localStorage.getItem('specific'));
+  console.log(storage.salary);
+      var handler = PaystackPop.setup({ 
+          key: 'pk_test_60011c68e2f4b339134d22a75e3387ae93ac57fe', 
+          email: 'teejohn247@gmail.com', 
+          amount: storage.salary, 
+          metadata: {
+              custom_fields: [
+                  {
+                      display_name: "Mobile Number",
+                      variable_name: "mobile_number",
+                      value: "+2348012345678" //customer's mobile number
+                  }
+              ]
+          },
+          callback: function (response) {
+              //after the transaction have been completed
+              //make post call  to the server with to verify payment 
+              //using transaction reference as post data
+              $.post("verify.php", {reference:response.reference}, function(status){
+                  if(status == "success"){
+                      //successful transaction
+                      alert('Transaction was successful');
+                  }
+  
+                  else
+                      //transaction failed
+                      alert(response);
+              });
+              payAll(storage.id);
+          },
+          onClose: function () {
+              //when the user close the payment modal
+              alert('Transaction cancelled');
+          }
+      });
+      handler.openIframe(); //open the paystack's payment modal
+  }
     
   
   const specific = (id) => {
@@ -88,7 +129,7 @@ const payAll = (id) => {
         btnn.textContent =`Learn more`;
         btnn.innerHTML = `<a href="./editForm.html"><button class="btn btn-primary btn-lg">Edit</button></a>`
         btnn.setAttribute('class', 'btn btn-primary btn-lg');
-        btnn2.innerHTML = `<button class="btn btn-primary btn-lg" onclick = "payAll(${id})">pay</button>`
+        btnn2.innerHTML = `<button class="btn btn-primary btn-lg" onclick = "payWithPaystack()">pay</button>`
         btnn2.setAttribute('class', 'btn btn-primary btn-lg');
       };
       populate();
