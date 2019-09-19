@@ -1,0 +1,46 @@
+div .nav-item{
+    display: flex;
+    flex-direction: row;
+}
+body{
+    margin:0px;
+}
+ul li{
+    margin:3px;
+    list-style: none;
+}
+.login-error{
+	background: #e15960;
+	color: #fefefe;
+	font-size: 12px;
+	text-align: center;
+	width: 110%;
+	margin: 0 auto;
+	border-radius: 5px;
+	padding: 0.5em;
+	display: none;
+}
+.edit {
+	background-color: #25C3CE;
+	font-size: 14px;
+	line-height: 24px;
+	letter-spacing: 1px;
+	font-weight: bold;
+	padding: 10px 30px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 0px;
+}
+.btnn{
+	background-color: #25C3CE;
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+	width: 20%;
+	color: white;
+	margin: 5px;
+
+}
+
+

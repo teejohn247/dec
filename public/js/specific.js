@@ -103,33 +103,37 @@ const payAll = (id) => {
         const id = storage.id;
         console.log(storage); 
         const jumbo = document.querySelector('.jumbotron');
-        const h = document.createElement('h1');
+        const h = document.createElement('h3');
         const p1 = document.createElement('h4');
         const p2 = document.createElement('h4');
         const p3 = document.createElement('h4');
         const p4 = document.createElement('h4');
         const p5 = document.createElement('h4');
         const p6 = document.createElement('h4');
+        const img = document.createElement('img');
+  
+  
   
         const btnn = document.createElement('a');
         const btnn2 = document.createElement('a');
   
   
   
-        jumbo.append(h,p1,p2,p3,p4,p5,p6,btnn,btnn2);
-        h.textContent =`Name: ${storage.firstName} ${storage.lastName}`;
+        jumbo.append(h,p1,p2,p3,p4,p5,p6,btnn,btnn2,img);
+        h.innerHTML =`<span class = "edit">Name:</span> ${storage.firstName} ${storage.lastName}`;
         p1.textContent =`Marital Status: ${storage.maritalStatus}`;
         p2.textContent =`Mobile Number:  ${storage.mobile}`;
         p3.textContent =`Payment Status: ${storage.status}`;
         p4.textContent =`Salary: ${storage.salary}`;
         p5.textContent =`Address: ${storage.address}`;
         p6.textContent =`Email: ${storage.email}`;
+        style="background-color:#100E17"
   
   
         btnn.textContent =`Learn more`;
-        btnn.innerHTML = `<a href="./editForm.html"><button class="btn btn-primary btn-lg">Edit</button></a>`
-        btnn.setAttribute('class', 'btn btn-primary btn-lg');
-        btnn2.innerHTML = `<button class="btn btn-primary btn-lg" onclick = "payWithPaystack()">pay</button>`
-        btnn2.setAttribute('class', 'btn btn-primary btn-lg');
+        jumbo.setAttribute('style', "background-color:#100E17");
+       
+        btnn.innerHTML = `<a href="./editForm.html"><button class="btnn">Edit</button></a>`
+        btnn2.innerHTML = `<button class="btnn" onclick = "payWithPaystack()">pay</button>`
       };
       populate();
