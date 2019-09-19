@@ -16,6 +16,7 @@ const payAll = (id) => {
             .then(res => res.json())
             .then(data => {
     console.log(data)
+    window.location.href = "./viewAll.html"
                 
          
             })
@@ -62,12 +63,12 @@ const payAll = (id) => {
         console.log(storage); 
         const jumbo = document.querySelector('.jumbotron');
         const h = document.createElement('h1');
-        const p1 = document.createElement('h3');
-        const p2 = document.createElement('h3');
-        const p3 = document.createElement('h3');
-        const p4 = document.createElement('h3');
-        const p5 = document.createElement('h3');
-        const p6 = document.createElement('h3');
+        const p1 = document.createElement('h4');
+        const p2 = document.createElement('h4');
+        const p3 = document.createElement('h4');
+        const p4 = document.createElement('h4');
+        const p5 = document.createElement('h4');
+        const p6 = document.createElement('h4');
   
         const btnn = document.createElement('a');
         const btnn2 = document.createElement('a');
@@ -75,13 +76,13 @@ const payAll = (id) => {
   
   
         jumbo.append(h,p1,p2,p3,p4,p5,p6,btnn,btnn2);
-        h.textContent =`${storage.firstName} ${storage.lastName}`;
-        p1.textContent =`${storage.maritalStatus}`;
-        p2.textContent =`${storage.mobile}`;
-        p3.textContent =`${storage.status}`;
-        p4.textContent =`${storage.salary}`;
-        p5.textContent =`${storage.address}`;
-        p6.textContent =`${storage.email}`;
+        h.textContent =`Name: ${storage.firstName} ${storage.lastName}`;
+        p1.textContent =`Marital Status: ${storage.maritalStatus}`;
+        p2.textContent =`Mobile Number:  ${storage.mobile}`;
+        p3.textContent =`Payment Status: ${storage.status}`;
+        p4.textContent =`Salary: ${storage.salary}`;
+        p5.textContent =`Address: ${storage.address}`;
+        p6.textContent =`Email: ${storage.email}`;
   
   
         btnn.textContent =`Learn more`;

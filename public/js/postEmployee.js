@@ -24,7 +24,7 @@ add.addEventListener("submit", event => {
 		.then(res => res.json())
 		.then(data => {
             localStorage.setItem("Employee", JSON.stringify(data));
-				window.location = "../UI/index.html";
+				window.location = "../viewAll.html";
 			}
 			)
 		.catch(error => console.log(error.message));
