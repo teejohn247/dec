@@ -14,6 +14,7 @@ const specific = (id) => {
             address, mobile, status,
            maritalStatus } = data
            localStorage.setItem("specific", JSON.stringify(data));
+           window.location.href = './specific.html'
            const jumbo = document.querySelector('.jumbotron');
            const h = document.createElement('h1');
            const btnn = document.createElement('a');
