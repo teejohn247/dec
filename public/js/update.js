@@ -11,7 +11,6 @@ form.innerHTML =
 <div class="form-group">
     <label>First Name</label>
     <input type="text" value="${storage.firstName}" class="firstName form-control" placeholder="Enter text">
-    <p class="help-block">Example block-level help text here.</p>
 </div>
 <div class="form-group">
     <label>Last Name</label>
@@ -63,7 +62,7 @@ const maritalStatus = document.querySelector(".maritalStatus");
         .then(res => res.json())
         .then(data => {
 console.log(storage)
-alert('updated')
+window.location.href ="./viewAll.html"
 
           localStorage.setItem("Employee", JSON.stringify(data));
       //window.location = "../index.html";

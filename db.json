@@ -5,29 +5,106 @@
       "email": "tolu29@email.com",
       "password": "wisdom123"
     }
-   
   ],
   "employees": [
     {
-      "email": "ricardokaka@gmail.com",
-      "firstName": "tolu",
-      "lastName": "Kaka",
-      "address": "22 Rio, Brazil.",
-      "mobile": "0906543564",
+      "email": "teejohn247@gmail.com",
+      "firstName": "Kolawole",
+      "lastName": "Johnson",
+      "address": "13, Yemi matanmi street",
+      "mobile": "08161582774",
       "status": "UNPAID",
-      "salary": "999000",
-      "maritalStatus": "Single",
+      "salary": "5050050",
+      "maritalStatus": "single",
       "id": 4
     },
     {
+      "email": "samayotunde8@gmail.com",
+      "firstName": "Ayotunde",
+      "lastName": "samuel",
+      "address": "lagos",
+      "mobile": "08130568984",
+      "status": "UNPAID",
+      "salary": "100000",
+      "maritalStatus": "Single",
+      "id": 5
+    },
+    {
+      "email": "forddavid703@gmail.com",
+      "firstName": "david",
+      "lastName": "ford",
+      "address": "lagos",
+      "mobile": "08127147518",
+      "status": "UNPAID",
+      "salary": "90000",
+      "maritalStatus": "Single",
+      "id": 6
+    },
+    {
       "email": "teejohn247@gmail.com",
-      "firstName": "Tolu",
-      "lastName": "Johnson",
+      "firstName": "Joseph",
+      "lastName": "Prince",
       "address": "13, Yemi matanmi street,Dalemo, Alakuko,Lagos",
       "mobile": "08161582774",
       "status": "UNPAID",
-      "maritalStatus": "single",
+      "salary": "50000",
+      "maritalStatus": "Married",
+      "id": 7
+    },
+    {
+      "email": "samayotunde8@gmail.com",
+      "firstName": "Moses",
+      "lastName": "samuel",
+      "address": "lagos",
+      "mobile": "08130568984",
+      "status": "UNPAID",
+      "salary": "90000",
+      "maritalStatus": "Single",
+      "id": 8
+    },
+    {
+      "email": "teejohn247@gmail.com",
+      "firstName": "Ajuwon",
+      "lastName": "Timothy",
+      "address": "Olomore,Abeokuta",
+      "mobile": "08161582774",
+      "status": "UNPAID",
+      "salary": "90000",
+      "maritalStatus": "Married",
+      "id": 9
+    },
+    {
+      "email": "forddavid703@gmail.com",
+      "firstName": "sam",
+      "lastName": "ford",
+      "address": "lagos",
+      "mobile": "08127147518",
+      "status": "UNPAID",
+      "salary": "80000",
+      "maritalStatus": "Single",
+      "id": 10
+    },
+    {
+      "email": "forddavid703@gmail.com",
+      "firstName": "Eze",
+      "lastName": "Sam",
+      "address": "lagos",
+      "mobile": "08127147518",
+      "status": "UNPAID",
+      "salary": "67000",
+      "maritalStatus": "Single",
       "id": 11
+    },
+    {
+      "email": "samayotunde8@gmail.com",
+      "firstName": "Ayo",
+      "lastName": "samuel",
+      "address": "lagos",
+      "mobile": "08130568984",
+      "status": "UNPAID",
+      "salary": "78000",
+      "maritalStatus": "Single",
+      "id": 12
     }
   ]
 }

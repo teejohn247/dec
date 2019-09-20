@@ -1,7 +1,7 @@
 const getPaid = () => {  
 
     fetch(
-     "http://localhost:3000/employees?status=PAID", {
+     "http://localhost:3000/employees?status=UNPAID", {
       method: 'GET',
       headers: {
             "Content-Type": 'application/json', 
